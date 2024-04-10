@@ -4,11 +4,13 @@ body {
 
 #dob_form {
   margin: 0 auto;
-  padding: 3rem 5rem;
-  width: 30%;
+  padding: 3rem 4rem;
+  width: 40%;
+  min-width: 450px;
   border: 1px solid black;
   border-radius: 16px;
   background-color: #e4f1ff;
+  box-sizing: border-box;
 }
 
 .input-field {
@@ -18,7 +20,7 @@ body {
 }
 
 .submit-btn {
-  width: 95%;
+  width: 40%;
   margin: 1rem 0;
   padding: 10px 20px;
   border-radius: 8px;
@@ -28,5 +30,5 @@ body {
 }
 
 #dob_month {
-  width: 60%;
+  width: 50%;
 }
