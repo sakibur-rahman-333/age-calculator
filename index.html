@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Age Calculator</title>
+  </head>
+  <body>
+    <form id="dob_form">
+      <h1>Calculate Your Age</h1>
+      <hr />
+      <div class="birth-date">
+        <p>Please Select your Birth Date</p>
+        <select class="input-field" required name="dob_month" id="dob_month">
+          <option selected value="">...Select Year...</option>
+          <option value="January">January</option>
+          <option value="February">February</option>
+          <option value="March">March</option>
+          <option value="April">April</option>
+          <option value="May">May</option>
+          <option value="June">June</option>
+          <option value="July">July</option>
+          <option value="August">August</option>
+          <option value="September">September</option>
+          <option value="October">October</option>
+          <option value="November">November</option>
+          <option value="December">December</option>
+        </select>
+        <select class="input-field" required name="dob_date" id="dob_date">
+          <option selected value="1">1</option>
+        </select>
+        <select class="input-field" required name="dob_year" id="dob_year">
+          <option selected value="2024">2024</option>
+        </select>
+        <button class="submit-btn" type="submit">Claculate Age</button>
+      </div>
+      <div class="show-age" id="show_age"></div>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>

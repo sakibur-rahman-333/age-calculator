@@ -1,0 +1,32 @@
+body {
+  font-family: Mulish;
+}
+
+#dob_form {
+  margin: 0 auto;
+  padding: 3rem 5rem;
+  width: 30%;
+  border: 1px solid black;
+  border-radius: 16px;
+  background-color: #e4f1ff;
+}
+
+.input-field {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.submit-btn {
+  width: 95%;
+  margin: 1rem 0;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: #6499e9;
+  color: #fff;
+}
+
+#dob_month {
+  width: 60%;
+}
