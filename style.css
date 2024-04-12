@@ -29,6 +29,10 @@ body {
   color: #fff;
 }
 
+.submit-btn:hover {
+  cursor: pointer;
+  transform: scale(0.98);
+}
 #dob_month {
   width: 50%;
 }
