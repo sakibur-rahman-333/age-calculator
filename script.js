@@ -5,6 +5,7 @@ let dobForm = document.getElementById("dob_form");
 let showAgeDiv = document.getElementById("show_age");
 let showAge = document.createElement("p");
 
+// Showing date and year numbers in dropdown
 function createMonthDays(days) {
   if (dobDate.childElementCount !== 0) {
     dobDate.innerHTML = "";
@@ -24,6 +25,7 @@ function createMonthDays(days) {
   }
 }
 
+// Calculating age
 function calculateAge(month, day, year) {
   let input = month + " " + day + ", " + year;
   const dob = new Date(input);
@@ -48,8 +50,7 @@ function calculateAge(month, day, year) {
   showAgeDiv.appendChild(showAge);
 }
 
-// Adding event listener
-
+// Selecting month
 dobMonth.addEventListener("change", (e) => {
   if (dobMonth.value === "January") {
     createMonthDays(31);
@@ -78,6 +79,7 @@ dobMonth.addEventListener("change", (e) => {
   }
 });
 
+// Submitting form
 dobForm.addEventListener("submit", (e) => {
   e.preventDefault();
   let month = dobForm[0].value;
