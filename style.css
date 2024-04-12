@@ -13,6 +13,12 @@ body {
   box-sizing: border-box;
 }
 
+.birth-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .input-field {
   padding: 10px;
   border-radius: 8px;
@@ -33,6 +39,20 @@ body {
   cursor: pointer;
   transform: scale(0.98);
 }
+
 #dob_month {
   width: 50%;
+}
+
+.output-tag {
+  background-color: #a7afb7;
+  padding: 5px 8px;
+  border-radius: 4px;
+}
+
+.show-age {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
 }
