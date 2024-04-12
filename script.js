@@ -6,15 +6,21 @@ let showAgeDiv = document.getElementById("show_age");
 let showAge = document.createElement("p");
 
 function createMonthDays(days) {
+  if (dobDate.childElementCount !== 0) {
+    dobDate.innerHTML = "";
+  }
   for (let i = 0; i < days; i++) {
     let selectTagDays = document.createElement("option");
     selectTagDays.innerText = i + 1;
     dobDate.appendChild(selectTagDays);
-    for (let i = 2024; i >= 1925; i--) {
-      let selectTagYeas = document.createElement("option");
-      selectTagYeas.innerText = i;
-      dobYear.appendChild(selectTagYeas);
-    }
+  }
+  if (dobYear.childElementCount !== 0) {
+    dobYear.innerHTML = "";
+  }
+  for (let i = 2024; i >= 1925; i--) {
+    let selectTagYeas = document.createElement("option");
+    selectTagYeas.innerText = i;
+    dobYear.appendChild(selectTagYeas);
   }
 }
 
