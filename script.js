@@ -3,11 +3,13 @@ let dobMonth = document.getElementById("dob_month");
 let dobForm = document.getElementById("dob_form");
 let dobDate = document.getElementById("dob_date");
 let dobYear = document.getElementById("dob_year");
+let showAge = document.getElementById("show_age");
 let calCulatedYearsTag = document.getElementById("calCulatedYearsTag");
 let calCulatedMonthsTag = document.getElementById("calCulatedMonthsTag");
 let calCulatedDaysTag = document.getElementById("calCulatedDaysTag");
 
 const month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+const months = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 // Calculating age
 function calculateAge(selectedDay, selectedMonth, selectedYear) {
@@ -29,20 +31,29 @@ function calculateAge(selectedDay, selectedMonth, selectedYear) {
   let calCulatedMonth = currMonth - selectedMonth;
   let calCulatedYear = currYear - selectedYear;
   // console.log(calCulatedDay, calCulatedMonth, calCulatedYear);
+  if (calCulatedDay < 0 || calCulatedMonth < 0 || calCulatedYear < 0) {
+    calCulatedYearsTag.remove();
+    calCulatedMonthsTag.remove();
+    calCulatedDaysTag.remove();
+    const invalid = document.createElement("p");
+    invalid.innerText = "Invalid Selection";
+    showAge.appendChild(invalid);
+  }
   calCulatedYearsTag.innerText = calCulatedYear + " Years";
   calCulatedMonthsTag.innerText = calCulatedMonth + " Months";
   calCulatedDaysTag.innerText = calCulatedDay + " Days";
 }
 
-function showSelectedMonthDays(days) {
+function showSelectedMonthDays(month) {
   if (dobDate.childElementCount !== 0) {
     dobDate.innerHTML = "";
   }
-  for (let i = 0; i < days; i++) {
+  for (let i = 0; i < months[month - 1]; i++) {
     let selectTagDays = document.createElement("option");
     selectTagDays.innerText = i + 1;
     dobDate.appendChild(selectTagDays);
   }
+  // console.log(days);
 }
 
 function showSelectedYear() {
@@ -55,36 +66,13 @@ function showSelectedYear() {
     selectTagYear.value = i;
     dobYear.appendChild(selectTagYear);
   }
-  console.dir(dobYear);
+  // console.dir(dobYear);
 }
 
 // Adding event listener
 dobMonth.addEventListener("change", (e) => {
-  if (dobMonth.value === "January") {
-    showSelectedMonthDays(31);
-  } else if (dobMonth.value === "February") {
-    showSelectedMonthDays(29);
-  } else if (dobMonth.value === "March") {
-    showSelectedMonthDays(31);
-  } else if (dobMonth.value === "April") {
-    showSelectedMonthDays(30);
-  } else if (dobMonth.value === "May") {
-    showSelectedMonthDays(31);
-  } else if (dobMonth.value === "June") {
-    showSelectedMonthDays(30);
-  } else if (dobMonth.value === "July") {
-    showSelectedMonthDays(31);
-  } else if (dobMonth.value === "August") {
-    showSelectedMonthDays(31);
-  } else if (dobMonth.value === "September") {
-    showSelectedMonthDays(30);
-  } else if (dobMonth.value === "October") {
-    showSelectedMonthDays(31);
-  } else if (dobMonth.value === "November") {
-    showSelectedMonthDays(30);
-  } else {
-    showSelectedMonthDays(31);
-  }
+  // console.log(dobMonth.value);
+  showSelectedMonthDays(dobMonth.value);
 });
 
 // dobYear.addEventListener("change", (e) => {
